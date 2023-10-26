@@ -12,7 +12,7 @@ const List = memo(({data}: ListProps) => {
   return (
     <AppList>
       {data.map((item) => {
-        return <AppListItem>{item.title}: {item.text}</AppListItem>
+        return <AppListItem key={item.id}>{item.title}: {item.text}</AppListItem>
       })}
     </AppList>
   )

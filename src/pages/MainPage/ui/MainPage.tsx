@@ -39,12 +39,14 @@ const MainPage = memo(({ className }: MainPageProps) => {
   useEffect(() => {
     if (tabs && id) {
       setActiveTab(tabs.findIndex((tab) => tab.id === id) ?? 0)
+    } else {
+      setActiveTab(0)
     }
   }, [id, tabs]);
 
 
   const renderTabContent = useCallback((tab: ApiTab) => {
-    switch (tab.id) {
+    switch (tab?.id) {
       case 'dummyTable':
         return <TableTab path={tab.path} />
       case 'dummyChart':
@@ -72,7 +74,7 @@ const MainPage = memo(({ className }: MainPageProps) => {
       </ul>
 
       <Suspense fallback={<PageLoader />}>
-        {tabs?.[activeTab]?.id && renderTabContent(tabs[activeTab])}
+        {renderTabContent(tabs[activeTab])}
       </Suspense>
     </div>
   );

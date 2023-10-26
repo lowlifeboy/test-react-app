@@ -1,0 +1,42 @@
+{
+  "tabs": [
+    {"id": "dummyTable", "title": "Dummy Table", "order": 1, "path": "tabs/dummyTable"},
+    {"id": "dummyChart", "title": "Dummy Chart", "order": 2, "path": "tabs/dummyChart"},
+    {"id": "dummyList", "title": "Dummy List", "order": 0, "path": "tabs/dummyList"}
+  ],
+  "dummyList": [
+    {"id": 1, "title": "Name 1", "text": "Text 1"},
+    {"id": 2, "title": "Name 2", "text": "Text 2"},
+    {"id": 3, "title": "Name 3", "text": "Text 3"},
+    {"id": 4, "title": "Name 4", "text": "Text 4"},
+    {"id": 5, "title": "Name 5", "text": "Text 5"}
+  ],
+  "dummyTable": {
+    "id": 1,
+    "headers": [
+      {"name": "Name"},
+      {"name": "Age"},
+      {"name": "Role"}
+    ],
+    "rows": [
+      {"id": 1, "data": ["John", 25, "Admin"]},
+      {"id": 2, "data": ["Jane", 30, "User"]},
+      {"id": 3, "data": ["Bob", 35, "Manager"]},
+      {"id": 4, "data": ["Alice", 40, "Admin"]},
+      {"id": 5, "data": ["David", 45, "User"]}
+    ]
+  },
+  "dummyChart": {
+    "labels": ["January", "February", "March", "April", "May"],
+    "datasets": [
+      {
+        "label": "2022",
+        "data": [1200, 1500, 1800, 1350, 2000]
+      },
+      {
+        "label": "2023",
+        "data": [1400, 1650, 1900, 1450, 2100]
+      }
+    ]
+  }
+}

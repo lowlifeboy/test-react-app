@@ -10,17 +10,17 @@ export interface ChartTabProps {
 }
 
 const ChartTab = memo(({ path }: ChartTabProps) => {
-  const {isLoading, data: response} = useQuery(
+  const {isLoading, data} = useQuery(
     'chart',
     () => Api.getChartData(path.split('/')[1])
   )
 
-  if (isLoading || !response) {
+  if (isLoading || !data) {
     return <PageLoader />
   }
 
   return (
-    <Chart title="Some params by Months" labels={response.data.labels} datasets={response.data.datasets} />
+    <Chart title="Some params by Months" labels={data.labels} datasets={data.datasets} />
   );
 })
 

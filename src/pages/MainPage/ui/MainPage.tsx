@@ -29,7 +29,7 @@ const MainPage = memo(({ className }: MainPageProps) => {
   useEffect(() => {
     Api.getTabsList()
       .then((res) => {
-        setTabs(bubbleSortByProperty<ApiTab>(res.data, 'order'))
+        setTabs(bubbleSortByProperty<ApiTab>(res, 'order'))
       })
       .catch((err) => {
         console.log(err)

@@ -10,17 +10,19 @@ export interface TableTabProps {
 }
 
 const TableTab = memo(({ path }: TableTabProps) => {
-  const {isLoading, data: response} = useQuery(
+  const {isLoading, data} = useQuery(
     'table',
     () => Api.getTableData(path.split('/')[1])
   )
 
-  if (isLoading || !response) {
+  if (isLoading || !data) {
     return <PageLoader />
   }
 
+  console.log(data)
+
   return (
-    <Table data={response.data} />
+    <Table data={data} />
   );
 })
 

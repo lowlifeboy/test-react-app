@@ -10,17 +10,17 @@ export interface ListTabProps {
 }
 
 const ListTab = memo(({ path }: ListTabProps) => {
-  const {isLoading, data: response} = useQuery(
+  const {isLoading, data} = useQuery(
     'list',
     () => Api.getListData(path.split('/')[1])
   )
 
-  if (isLoading || !response) {
+  if (isLoading || !data) {
     return <PageLoader />
   }
 
   return (
-    <List data={response.data} />
+    <List data={data} />
   );
 })
 

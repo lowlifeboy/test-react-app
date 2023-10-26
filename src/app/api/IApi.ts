@@ -7,8 +7,8 @@ import {
 } from "./entities";
 
 export default interface IApi {
-  getTabsList(): Promise<ApiResponse<ApiTab[]>>;
-  getChartData(id: string): Promise<ApiResponse<ApiChartData>>;
-  getListData(id: string): Promise<ApiResponse<ApiListItem[]>>;
-  getTableData(id: string): Promise<ApiResponse<ApiTableData>>;
+  getTabsList(): Promise<ApiTab[]>;
+  getChartData(id: string): Promise<ApiChartData>;
+  getListData(id: string): Promise<ApiListItem[]>;
+  getTableData(id: string): Promise<ApiTableData>;
 }
